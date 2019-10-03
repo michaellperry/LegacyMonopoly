@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LegacyMonopoly.Repository\LegacyMonopoly.Repository.csproj" />
+    <ProjectReference Include="..\LegacyMonopoly.DataAccess\LegacyMonopoly.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

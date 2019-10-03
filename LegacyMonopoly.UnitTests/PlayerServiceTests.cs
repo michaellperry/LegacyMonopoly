@@ -2,9 +2,9 @@ using System;
 using Xunit;
 using FluentAssertions;
 using LegacyMonopoly.Service;
-using LegacyMonopoly.Repository;
 using LegacyMonopoly.DataAccess;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace LegacyMonopoly.UnitTests
 {
@@ -14,7 +14,7 @@ namespace LegacyMonopoly.UnitTests
         public void WhenGameDoesNotExist_ThenPlayerServiceReturnsNull()
         {
             var playerService = GivenPlayerService(
-                GivenRepository());
+                GivenContext());
 
             var playerCollection = playerService.LoadPlayers(gameId: 99);
 
@@ -25,7 +25,7 @@ namespace LegacyMonopoly.UnitTests
         public void WhenGameExistsAndHasNoPlayers_ThenPlayerServiceReturnsEmptyCollection()
         {
             var playerService = GivenPlayerService(
-                GivenRepository()
+                GivenContext()
                     .WithGame(1));
 
             var playerCollection = playerService.LoadPlayers(gameId: 1);
@@ -38,7 +38,7 @@ namespace LegacyMonopoly.UnitTests
         public void WhenGameExistsAndHasPlayers_THenPlayerServiceReturnsPlayers()
         {
             var playerService = GivenPlayerService(
-                GivenRepository()
+                GivenContext()
                     .WithGameHavingPlayers(1, "Michael", "Kaela"));
 
             var playerCollection = playerService.LoadPlayers(1);
@@ -46,14 +46,18 @@ namespace LegacyMonopoly.UnitTests
             playerCollection.Players.Count().Should().Be(2);
         }
 
-        private static MemoryPlayerRepository GivenRepository()
+        private static MonopolyContext GivenContext()
         {
-            return new MemoryPlayerRepository();
+            string databaseName = Guid.NewGuid().ToString();
+
+            return new MonopolyContext(new DbContextOptionsBuilder()
+                .UseInMemoryDatabase(databaseName)
+                .Options);
         }
 
-        private static PlayerService GivenPlayerService(MemoryPlayerRepository repository)
+        private static PlayerService GivenPlayerService(MonopolyContext context)
         {
-            return new PlayerService(repository);
+            return new PlayerService(context);
         }
     }
 }

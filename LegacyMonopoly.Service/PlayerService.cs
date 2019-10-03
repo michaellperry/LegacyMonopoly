@@ -1,21 +1,23 @@
 ﻿using LegacyMonopoly.DataAccess;
-using LegacyMonopoly.Repository;
 using System;
+using System.Linq;
 
 namespace LegacyMonopoly.Service
 {
     public class PlayerService
     {
-        private readonly IPlayerRepository repository;
+        private readonly MonopolyContext context;
 
-        public PlayerService(IPlayerRepository repository)
+        public PlayerService(MonopolyContext context)
         {
-            this.repository = repository;
+            this.context = context;
         }
 
         public PlayerCollection LoadPlayers(int gameId)
         {
-            var game = repository.GetGameById(gameId);
+            var game = context.Games
+                .Where(g => g.GameId == gameId)
+                .SingleOrDefault();
             if (game == null)
             {
                 return null;
