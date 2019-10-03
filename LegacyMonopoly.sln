@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyMonopoly", "LegacyMonopoly\LegacyMonopoly.csproj", "{21017A47-34BA-48AC-B502-F587680E882F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyMonopoly.DataAccess", "LegacyMonopoly.DataAccess\LegacyMonopoly.DataAccess.csproj", "{D06ED754-805F-4643-B121-B31E163D35A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{21017A47-34BA-48AC-B502-F587680E882F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21017A47-34BA-48AC-B502-F587680E882F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21017A47-34BA-48AC-B502-F587680E882F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06ED754-805F-4643-B121-B31E163D35A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06ED754-805F-4643-B121-B31E163D35A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06ED754-805F-4643-B121-B31E163D35A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06ED754-805F-4643-B121-B31E163D35A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
