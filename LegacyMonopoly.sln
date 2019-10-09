@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyMonopoly.UnitTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyMonopoly.Service", "LegacyMonopoly.Service\LegacyMonopoly.Service.csproj", "{63555486-1E49-489F-A148-DC10FB97E0B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyMonopoly.IntegrationTests", "LegacyMonopoly.IntegrationTests\LegacyMonopoly.IntegrationTests.csproj", "{216F2A89-6996-461A-ACEC-318FA3C9C987}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{63555486-1E49-489F-A148-DC10FB97E0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63555486-1E49-489F-A148-DC10FB97E0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63555486-1E49-489F-A148-DC10FB97E0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216F2A89-6996-461A-ACEC-318FA3C9C987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216F2A89-6996-461A-ACEC-318FA3C9C987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216F2A89-6996-461A-ACEC-318FA3C9C987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216F2A89-6996-461A-ACEC-318FA3C9C987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

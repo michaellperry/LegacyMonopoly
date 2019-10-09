@@ -1,4 +1,5 @@
 ﻿using LegacyMonopoly.DataAccess;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -16,6 +17,7 @@ namespace LegacyMonopoly.Service
         public PlayerCollection LoadPlayers(int gameId)
         {
             var game = context.Games
+                .Include(g => g.Players)
                 .Where(g => g.GameId == gameId)
                 .SingleOrDefault();
             if (game == null)
@@ -24,7 +26,13 @@ namespace LegacyMonopoly.Service
             }
             else
             {
-                return new PlayerCollection();
+                return new PlayerCollection
+                {
+                    Players = game.Players.Select(p => new PlayerRepresentation
+                    {
+                        Name = p.Name
+                    }).ToList()
+                };
             }
         }
     }

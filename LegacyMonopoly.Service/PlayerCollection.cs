@@ -5,7 +5,7 @@ namespace LegacyMonopoly.Service
 {
     public class PlayerCollection
     {
-        public IEnumerable<PlayerRepresentation> Players { get; }
+        public List<PlayerRepresentation> Players { get; set; }
             = new List<PlayerRepresentation>();
     }
 }

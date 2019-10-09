@@ -2,5 +2,6 @@
 {
     public class PlayerRepresentation
     {
+        public string Name { get; set; }
     }
 }
